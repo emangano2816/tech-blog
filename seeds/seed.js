@@ -8,11 +8,13 @@ const commentsSeedData = require('./commentsSeedData.json');
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
 
+    //add user seed data to database; use hook to encrypt password
     const users = await User.bulkCreate(userSeedData, {
         individualHooks: true,
         returning: true,
     });
 
+    //add post seed data to database; for each record assign a random user
     for (const post of postsSeedData) {
         const newPost = await Posts.create({
             ...post,
@@ -23,6 +25,7 @@ const seedDatabase = async () => {
 
     const allPosts = await Posts.findAll();
 
+    //add comment seed data to database; for each record asign a random user and a random post
     for (const comment of commentsSeedData) {
         const newComment = await Comments.create({
             ...comment,
