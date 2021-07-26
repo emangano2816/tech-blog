@@ -1,0 +1,15 @@
+[
+    {
+        "post_title": "Blog Post 1",
+        "post_message": "This is blog post 1.  This is blog post 1. This is blog post 1."
+    },
+    {
+        "post_title": "Blog Post 2",
+        "post_message": "This is blog post 2.  Blog post 2 is another fake blog post."
+    },
+    {
+        "post_title": "Blog Post 3",
+        "post_message": "This is blog post 3.  Yet another pretend blog post."
+    }
+
+]

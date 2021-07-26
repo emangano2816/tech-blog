@@ -1,0 +1,10 @@
+[
+    {
+        "comment_title": "Comment 1",
+        "comment_message": "This is a comment about a blog post."
+    },
+    {
+        "comment_title": "Comment 2",
+        "comment_message": "This is another comment about another blog post."
+    }
+]
