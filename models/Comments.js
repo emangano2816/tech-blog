@@ -25,7 +25,7 @@ Comments.init(
                 key: 'id',
             },
         },
-        blog_id: {
+        post_id: {
             references: {
                 model: 'posts',
                 key: 'id'
