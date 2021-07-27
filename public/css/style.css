@@ -24,7 +24,37 @@ body {
 
 .nav-custom a {
     color: var(--Primary);
-    font-size: 1.5rem;
+    font-size:1.5rem;
+}
+
+.main-container-custom {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.post-container-custom {
+    width: 90%;
+    background-color: var(--Secondary);
+    border-color: var(--Dark);
+    border-radius: 10px;
+    color: var(--AccentDrk);
+}
+
+.post-hdr-custom {
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-bottom-color: var(--Primary);
+    border-bottom-style: dotted;
+}
+
+.post-message-custom {
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    font-size: 1.25rem;
 }
 
 
