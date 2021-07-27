@@ -32,7 +32,7 @@ const seedDatabase = async () => {
             //attach random user_id to each comment
             user_id: users[Math.floor(Math.random() * users.length)].id,
             //attach random post_id  to each comment
-            post_id = allPosts[Math.floor(Math.random() * allPosts.length)].id
+            post_id: allPosts[Math.floor(Math.random() * allPosts.length)].id
         });
     }
 
