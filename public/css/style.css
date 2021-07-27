@@ -1,0 +1,32 @@
+:root {
+    --Primary: #F0FFF1;
+    --Secondary: #8367C7;
+    --Dark: #5603AD;
+    --AccentDrk: #B3E9C7;
+    --AccentLt: #C2F8CB;
+}
+
+body {
+    background-color: var(--Primary);
+}
+
+.nav-custom {
+    padding: 20px;
+    background-image: linear-gradient(to top, var(--Dark), var(--AccentDrk));
+    color: var(--Primary);
+}
+
+.hdr-custom {
+    color: var(--Dark);
+    font-size: 4rem;
+    
+}
+
+.nav-custom a {
+    color: var(--Primary);
+    font-size: 1.5rem;
+}
+
+
+
+
