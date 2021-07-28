@@ -12,8 +12,21 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+//Set up options for sessions
+const sess = {
+    secret: process.env.SESSION_SECRET,
+    cookie: {},
+    resave: false,
+    saveUnitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    })
+};
+
+app.use(session(sess));
+
 //Create Handlebars.js engine object with custom helper functions
-// const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers });
 
 //Inform Express.js which template engine we're using
 app.set('view engine','hbs');
