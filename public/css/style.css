@@ -65,6 +65,11 @@ body {
     font-size: 1.25rem;
 }
 
+.posted-by-custom {
+    color: var(--Dark);
+    font-weight: bold;
+}
+
 .btn-custom {
     width: 15%;
     background-image: linear-gradient(var(--Primary), var(--AccentDrk));

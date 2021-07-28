@@ -4,6 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
+const helpers = require('./utils/helpers')
 
 const sequelize = require('./config/connection.js');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -12,12 +13,15 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+//Create Handlebars.js engine object with custom helper functions
+const hbs = exphbs.create({ helpers });
+
 //Set up options for sessions
 const sess = {
     secret: process.env.SESSION_SECRET,
     cookie: {},
     resave: false,
-    saveUnitialized: true,
+    saveUninitialized: false,
     store: new SequelizeStore({
         db: sequelize
     })
@@ -25,15 +29,13 @@ const sess = {
 
 app.use(session(sess));
 
-//Create Handlebars.js engine object with custom helper functions
-const hbs = exphbs.create({ helpers });
-
 //Inform Express.js which template engine we're using
-app.set('view engine','hbs');
 app.engine('hbs', exphbs({
     extname: 'hbs',
-    defaultLayout:'index',
+    defaultLayout:'main',
+    helpers: true,
 }));
+app.set('view engine','hbs');
 
 
 app.use(express.json());
