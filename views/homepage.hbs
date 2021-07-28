@@ -1,0 +1,12 @@
+    <!--homepage blog post display-->
+    <main class = "d-flex flex-column align-items-center main-container-custom">
+        {{#each posts as |post| }}
+        <div class="d-flex flex-column mb-3 container-custom">
+            <div class="d-flex justify-content-between main-hdr-custom">
+                <h2 class="post-title-custom mb-0">{{post_title}}</h2>
+                <p class="post-by-custom align-self-end mb-0">Posted by {{user.username}} on {{ createdAt }}</p>
+            </div>
+            <p class="post-message-custom"> {{post_message}}</p>
+        </div>
+        {{/each}}
+    </main>
