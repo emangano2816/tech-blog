@@ -33,14 +33,19 @@
         <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="/dashboard">Dashboard</a>
         </li>
+        {{#if logged_in}}
+        <li class="nav-item">
+          <a class="nav-link hide-link" data-toggle="tab" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" id="logout" href="/logout">Logout</a>
+        </li>
+        {{else}}
         <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="/login">Login</a>
         </li>
-        {{#if logged_in}}
-          <li class="nav-item">
-            <button class="nav-link" data-toggle="tab" id="logout">Logout</button>
-          </li>
         {{/if}}
+
       </ul>
   </nav>  
 
@@ -48,15 +53,15 @@
       {{{body}}}
   </main>
 
-</body>
-
-<!--Links to script files-->
+  <!--Links to script files-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 {{#if logged_in}}
 <script src="/js/logout.js"></script>
+{{else}}
+<script src="/js/login.js"></script>
 {{/if}}
 
-
+</body>
 </html>

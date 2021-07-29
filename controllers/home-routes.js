@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
 
         res.render('homepage', {
             posts,
+            logged_in:req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -25,7 +26,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
         const existingPosts = await Posts.findAll({
             include: {model: User },
             where: {
-                user_id: {$col: req.session.user_id}
+                user_id: req.session.user_id
             },
         });
 
@@ -35,6 +36,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
         res.render('dashboard', {
             posts,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -44,7 +46,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 //login route - display login page
 router.get('/login', (req,res) => {
     if(req.session.logged_in) {
-        res.redirect('/');
+        res.redirect('/dashboard');
         return;
     }
 
