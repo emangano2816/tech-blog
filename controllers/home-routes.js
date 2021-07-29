@@ -23,7 +23,10 @@ router.get('/', async (req, res) => {
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const existingPosts = await Posts.findAll({
-            include: {model: User }
+            include: {model: User },
+            where: {
+                user_id: {$col: req.session.user_id}
+            },
         });
 
         console.log(existingPosts);
