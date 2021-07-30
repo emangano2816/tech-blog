@@ -45,12 +45,20 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 //login route - display login page
 router.get('/login', (req,res) => {
+    //if user is logged in redirect to user's dashboard
     if(req.session.logged_in) {
         res.redirect('/dashboard');
         return;
     }
-
+    //otherwise render login page
     res.render('login');
 });
+
+//logout route - redirect back to login page
+router.get('/logout', (req,res) => {
+    //redirect user to login page
+    res.redirect('/login')
+});
+
 
 module.exports = router;
