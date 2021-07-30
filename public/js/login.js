@@ -19,13 +19,10 @@ const loginFormHandler = async (event) => {
             response.json().then(data => {
                 console.log(data.message);
             }) 
-        } //else {
-        //     document.location.reload('/login');
-        //     alert('Login unsuccesful.  Try again.');
-        // }
+        } 
     } else {
         document.location.reload('/login');
-        alert('Not able to login.');
+        alert('Username and/or password invalid.  Please try again.');
         };
 ;}
 
