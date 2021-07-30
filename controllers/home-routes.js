@@ -54,6 +54,17 @@ router.get('/login', (req,res) => {
     res.render('login');
 });
 
+//create account route - display create account
+router.get('/createaccount', (req, res) => {
+    //if user is logged in, redirect to user's dashboard
+    if(req.session.logged_in) {
+        res.redirect('/dashboard');
+        return;
+    }
+    //otherwise render create account page
+    res.render('createaccount');
+})
+
 //logout route - redirect back to login page
 router.get('/logout', (req,res) => {
     //redirect user to login page

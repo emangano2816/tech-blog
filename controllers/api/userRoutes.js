@@ -32,6 +32,9 @@ router.post('/login', async (req, res) => {
     }
 });
 
+//create account (POST) route
+
+
 //logout route
 router.post('/logout', (req, res) => {
     if(req.session.logged_in) {
