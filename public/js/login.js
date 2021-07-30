@@ -16,11 +16,16 @@ const loginFormHandler = async (event) => {
         }); 
         if (response.ok) {
             document.location.replace('/dashboard');
-            alert('Login successful.');
-        } 
+            response.json().then(data => {
+                console.log(data.message);
+            }) 
+        } //else {
+        //     document.location.reload('/login');
+        //     alert('Login unsuccesful.  Try again.');
+        // }
     } else {
+        document.location.reload('/login');
         alert('Not able to login.');
-        console.log('not logged in');
         };
 ;}
 

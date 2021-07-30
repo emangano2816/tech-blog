@@ -26,23 +26,23 @@
       <h1 class="text-center hdr-custom">Tech Blog</h1>
       <br>
       <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
+      <ul class="nav nav-tabs" >
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="/">Home</a>
+          <a href="/" class="nav-link active" >Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="/dashboard">Dashboard</a>
+          <a href="/dashboard" class="nav-link" >Dashboard</a>
         </li>
         {{#if logged_in}}
         <li class="nav-item">
-          <a class="nav-link hide-link" data-toggle="tab" href="/login">Login</a>
+          <a href="/login" class="nav-link hide-link" >Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" id="logout" href="/logout">Logout</a>
+          <a href="/logout" class="nav-link" id="logout" >Logout</a>
         </li>
         {{else}}
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="/login">Login</a>
+          <a class="nav-link" href="/login">Login</a>
         </li>
         {{/if}}
 
