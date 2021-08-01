@@ -1,18 +1,31 @@
     <!--create account page-->
-    <form class="d-flex flex-column container-custom" id="login-form">
-        <div class = "main-hdr-custom">
-            <h2>Create Account</h2>
-        </div>
-        <div class="form-group prompt-custom">
-            <label for="user">Username:</label>
-            <input type="user" class="form-control" placeholder="Enter username" id="user">
-        </div>
-        <div class="form-group prompt-custom">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" placeholder="Enter password" id="pwd">
-        </div>
-        <button type="submit" class="btn btn-primary btn-custom" id="login-btn">Create Account</button>
-        <a class = "sign-up-link" href="/login">Login</a>
-    </form>
+    <main class = "d-flex flex-column align-items-center main-container-custom">
+
+        <form class="d-flex flex-column container-custom" id="login-form">
+            <div class = "main-hdr-custom">
+                <h2>Create Account</h2>
+            </div>
+            <div class="form-group prompt-custom">
+                <label for="user">Username:</label>
+                <input type="user" class="form-control" placeholder="Enter username" id="user">
+            </div>
+            <div class="form-group prompt-custom">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+            </div>
+            <button type="submit" class="btn btn-primary btn-custom" id="create-acct-btn">Create Account</button>
+            <a class = "sign-up-link" href="/login">Login</a>
+        </form>
+
+    </main>
+
+
+    
+{{#if logged_in}}
+    <script src="/js/logout.js"></script>
+{{else}}
+    <script src="/js/create-acct.js"></script>
+{{/if}}
+
 
     
