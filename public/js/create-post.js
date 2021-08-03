@@ -2,8 +2,8 @@ const createNewPost = async (e) => {
     e.preventDefault();
     e.stopPropagation();
 
-    const post_title = document.querySelector('#post-title');
-    const post_message = document.querySelector('#post-message');
+    const post_title = document.querySelector('#post-title').value;
+    const post_message = document.querySelector('#post-message').value;
 
     if (post_title && post_message) {
         const response = await fetch('/api/posts/createpost', {
@@ -12,10 +12,10 @@ const createNewPost = async (e) => {
             headers: { 'Content-Type': 'application/json' },
         });
         if (response.ok) {
-            document.location.replace('/dashboard');
             response.json().then(data => {
                 alert(data.message);
             });
+            document.location.replace('/dashboard');
         } else {
             document.location.reload('/addpost');
             response.json().then(data => {
@@ -23,11 +23,12 @@ const createNewPost = async (e) => {
             });
         }
     } else {
-        document.location.reload('/addpost');
+        //document.location.reload('/addpost');
         alert('Please provide a post title and message.')
+        return;
     };
 };
 
 document   
-    .querySelector('#create-post')
-    .addEventListener('click', createNewPost);
+    .querySelector('#create-post-form')
+    .addEventListener('submit', createNewPost);

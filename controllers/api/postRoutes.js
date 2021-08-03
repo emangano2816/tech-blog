@@ -5,13 +5,13 @@ const { Posts } = require('../../models');
 router.post('/createpost', async (req, res) => {
     try {
         
-        const newPost = await Posts.create({
+        await Posts.create({
             post_title: req.body.post_title,
             post_message: req.body.post_message,
             user_id: req.session.user_id,
         })
-        //res.status(200).json({newPost});
-        res.status(200).redirect('../../dashboard');
+        res.status(200).json({message: 'Post created successfully.'});
+        //res.status(200).redirect('../../dashboard');
     } catch (err) {
         res.status(400).json(err);
     }
