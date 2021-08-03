@@ -43,6 +43,17 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
+//add post route
+router.get('/addpost', async (req, res) => {
+    try {
+        res.render('addpost', {
+            logged_in: req.session.logged_in,
+        })
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 //login route - display login page
 router.get('/login', (req,res) => {
     //if user is logged in redirect to user's dashboard

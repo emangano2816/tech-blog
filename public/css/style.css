@@ -75,7 +75,6 @@ body {
 }
 
 .btn-custom {
-    width: 15%;
     background-image: linear-gradient(var(--Primary), var(--AccentDrk));
     border-color: var(--AccentLt);
     color: var(--Dark);
